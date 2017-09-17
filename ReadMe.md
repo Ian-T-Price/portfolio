@@ -12,3 +12,6 @@ HTML
 CSS
 Fonts Awesome
 Google Fonts
+
+---
+Changed the git host from GitLab to GitHub with seemingly no issues - magic

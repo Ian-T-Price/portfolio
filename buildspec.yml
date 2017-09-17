@@ -8,6 +8,6 @@ artifacts:
   files:
     - index.html
     - favicon.ico
-    - '2017-07 Skills CV - LSA-DO.pdf'
+    - 2017-07\ Skills\ CV\ -\ LSA-DO.pdf
     - styles/main.css
     - images/*

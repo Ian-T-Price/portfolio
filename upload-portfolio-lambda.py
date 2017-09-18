@@ -24,6 +24,7 @@ with zipfile.ZipFile(portfolio_zip) as myzip:
         mimetype = mimetypes.guess_type(nm)
         if mimetype[0] is None:
             portfolio_bucket.upload_fileobj(obj, nm)
+            print('non-valid Mime Type:', nm)
         else:
             portfolio_bucket.upload_fileobj(obj, nm,
                 ExtraArgs={'ContentType': mimetype[0]})

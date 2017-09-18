@@ -1,3 +1,6 @@
+.directory
+?directory
+*directory
 __pycache__/
 bin/
 include/

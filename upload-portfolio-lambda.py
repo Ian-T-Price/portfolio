@@ -21,6 +21,13 @@ build_bucket.download_fileobj(
 with zipfile.ZipFile(portfolio_zip) as myzip:
     for nm in myzip.namelist():
         obj = myzip.open(nm)
-        portfolio_bucket.upload_fileobj(obj, nm,
-          ExtraArgs={'ContentType': mimetypes.guess_type(nm)[0]})
+        mimetype = mimetypes.guess_type(nm)
+        if mimetype[0] is None:
+            portfolio_bucket.upload_fileobj(obj, nm)
+        else:
+            portfolio_bucket.upload_fileobj(obj, nm,
+                ExtraArgs={'ContentType': mimetype[0]})
+        # This fails on unknown file types .jpeg or .png
+        # portfolio_bucket.upload_fileobj(obj, nm,
+        #    ExtraArgs={'ContentType': mimetypes.guess_type(nm)[0]})
         portfolio_bucket.Object(nm).Acl().put(ACL='public-read')

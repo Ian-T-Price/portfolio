@@ -16,7 +16,7 @@ build_bucket = s3.Bucket('portfoliobuild.iantprice.com')
 portfolio_zip = io.BytesIO()
 
 build_bucket.download_fileobj(
-  'f71d657c-2b8b-4c84-823f-c20d2e60bd87/portfoliobuild.zip', portfolio_zip)
+  'portfoliobuild.zip', portfolio_zip)
 
 with zipfile.ZipFile(portfolio_zip) as myzip:
     for nm in myzip.namelist():

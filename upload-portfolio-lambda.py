@@ -12,27 +12,38 @@ import mimetypes
 
 def lambda_handler(event, context):
     """Upload zip file from GitHub to S3 bucket."""
-    s3 = boto3.resource('s3')
+    sns = boto3.resource('sns')
+    topic = sns.Topic(
+        'arn:aws:sns:eu-west-2:389685695569:deployPortfolioTopic')
 
-    portfolio_bucket = s3.Bucket('portfolio.iantprice.com')
-    build_bucket = s3.Bucket('portfoliobuild.iantprice.com')
-    portfolio_zip = io.BytesIO()
+    try:
+        s3 = boto3.resource('s3')
 
-    build_bucket.download_fileobj(
-      'portfoliobuild.zip', portfolio_zip)
+        portfolio_bucket = s3.Bucket('portfolio.iantprice.com')
+        build_bucket = s3.Bucket('portfoliobuild.iantprice.com')
+        portfolio_zip = io.BytesIO()
 
-    with zipfile.ZipFile(portfolio_zip) as myzip:
-        for nm in myzip.namelist():
-            obj = myzip.open(nm)
-            mimetype = mimetypes.guess_type(nm)
-            if mimetype[0] is None:
-                portfolio_bucket.upload_fileobj(obj, nm)
-                print('non-valid Mime Type:', nm)
-            else:
-                portfolio_bucket.upload_fileobj(obj, nm,
-                    ExtraArgs={'ContentType': mimetype[0]})
-            portfolio_bucket.Object(nm).Acl().put(ACL='public-read')
+        build_bucket.download_fileobj(
+          'portfoliobuild.zip', portfolio_zip)
 
-    print("Latest portfolio files uploaded")
+        with zipfile.ZipFile(portfolio_zip) as myzip:
+            for nm in myzip.namelist():
+                obj = myzip.open(nm)
+                mimetype = mimetypes.guess_type(nm)
+                if mimetype[0] is None:
+                    portfolio_bucket.upload_fileobj(obj, nm)
+                    print('non-valid Mime Type:', nm)
+                else:
+                    portfolio_bucket.upload_fileobj(
+                        obj, nm, ExtraArgs={'ContentType': mimetype[0]})
+                portfolio_bucket.Object(nm).Acl().put(ACL='public-read')
 
-    return 'Portfolio updated'
+        print("Latest portfolio files uploaded")
+        topic.publish(Subject="AWS SNS: Portfolio deployed by Lambda",
+                      Message="Successfully deployed")
+    except Exception:
+        topic.publish(Subject="AWS SNS: Portfolio deploy FAILURE by Lambda",
+                      Message="Portfolio deployment failed")
+        raise
+
+    return "Portfolio lambda'ed"

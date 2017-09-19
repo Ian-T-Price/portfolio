@@ -106,13 +106,19 @@ h1, h2, h3, h4, h5, h6 {
   width: 50%;
 }
 
-.section__text--centered {
+.section__text--centered-top {
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  transform: translate(0%, -60%);
+}
+
+.section__text--centered-bottom {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0%);
 }
-
 .section__exampleWrapper,
 .section__example {
   display: inline-block;

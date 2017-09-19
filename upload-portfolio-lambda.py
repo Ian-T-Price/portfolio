@@ -16,15 +16,27 @@ def lambda_handler(event, context):
     topic = sns.Topic(
         'arn:aws:sns:eu-west-2:389685695569:deployPortfolioTopic')
 
+    location = {
+        "bucketName": 'portfoliobuild.iantprice.com',
+        "objectKey": 'portfoliobuild.zip'
+    }
     try:
+        job = event.get("CodePipeline.job")
+
+        if job:
+            for artifact in job["data"]["inputArtifacts"]:
+                if artifact["name"] is "MyAppBuild":
+                    location = artifact["location"]["s3location"]
+
+        print("Building portfolio from " + str(location))
         s3 = boto3.resource('s3')
 
         portfolio_bucket = s3.Bucket('portfolio.iantprice.com')
-        build_bucket = s3.Bucket('portfoliobuild.iantprice.com')
+        build_bucket = s3.Bucket(location["bucketName"])
         portfolio_zip = io.BytesIO()
 
         build_bucket.download_fileobj(
-          'portfoliobuild.zip', portfolio_zip)
+          location["objectKey"], portfolio_zip)
 
         with zipfile.ZipFile(portfolio_zip) as myzip:
             for nm in myzip.namelist():
@@ -41,6 +53,9 @@ def lambda_handler(event, context):
         print("Latest portfolio files uploaded")
         topic.publish(Subject="AWS SNS: Portfolio deployed by Lambda",
                       Message="Successfully deployed")
+        if job:
+            codepipeline = boto3.client('codepipeline')
+            codepipeline.put_job_success_result(jobId=job["id"])
     except Exception:
         topic.publish(Subject="AWS SNS: Portfolio deploy FAILURE by Lambda",
                       Message="Portfolio deployment failed")

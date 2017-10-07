@@ -6,7 +6,7 @@ phases:
       - echo Nothing to do yet
 artifacts:
   files:
-    - /*.html
+    - ./*.html
     - favicon.ico
     - images/2017-07 Skills CV - LSA-DO.pdf
     - styles/*.css

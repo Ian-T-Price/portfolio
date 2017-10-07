@@ -1,0 +1,23 @@
+/* Basic stylesheet for Portfolio project */
+
+body {
+    background-color: linen;
+}
+
+.errorBox {
+  border: 1px solid red;
+  background-color: #eebbbb;
+  margin: 1em;
+  padding: 2em;
+  }
+
+.contentBox {
+  border: 1px solid green;
+  background-color: #bbeebb;
+  margin: 1em;
+  padding: 2em;
+}
+
+.hiddenBox {
+  display: none;
+}

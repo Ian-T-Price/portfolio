@@ -4,18 +4,20 @@ body {
     background-color: linen;
 }
 
-.errorBox {
-  border: 1px solid red;
-  background-color: #eebbbb;
+.Box {
+  width: 20em;
   margin: 1em;
   padding: 2em;
   }
 
-.contentBox {
+.errorBox {
+  border: 1px solid red;
+  background-color: #eebbbb;
+  }
+
+.successBox {
   border: 1px solid green;
   background-color: #bbeebb;
-  margin: 1em;
-  padding: 2em;
 }
 
 .hiddenBox {

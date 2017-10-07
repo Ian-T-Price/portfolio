@@ -7,7 +7,9 @@ phases:
 artifacts:
   files:
     - index.html
+    - babel.html
     - favicon.ico
     - images/2017-07 Skills CV - LSA-DO.pdf
     - styles/main.css
+    - styles/portfolio.css
     - images/*

@@ -66,11 +66,11 @@ Following ACloudGuru's Serverless Portfolio course
    This is a Python 3.6 script that requires the following to be set as
    environment variables:
 
-  * bucketName          e.g. portfoliobuild.iantprice.com
-  * objectKey           e.g. portfoliobuild.zip
-  * portfolio_bucket    e.g. portfolio.iantprice.com
-  * sns_arn             e.g. arn:aws:sns:eu-west-2:389685695569:deployPortfolioTopic  
+    * bucketName          e.g. portfoliobuild.iantprice.com
+    * objectKey           e.g. portfoliobuild.zip
+    * portfolio_bucket    e.g. portfolio.iantprice.com
+    * sns_arn             e.g. arn:aws:sns:eu-west-2:389685695569:deployPortfolioTopic  
 
-    A success or failure email is sent at the end of the function
+   A success or failure email is sent at the end of the function
 
 9. The result will be found at <http://portfolio.iantprice.com/index.html>

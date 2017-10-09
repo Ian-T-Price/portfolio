@@ -55,22 +55,22 @@ Following ACloudGuru's Serverless Portfolio course
    The file is named __portfoliobuild.zip__  
    and the S3 bucket is __portfoliobuild.iantprice.com__  
 
-6. Set permissions for the CodeBuild project
+7. Set permissions for the CodeBuild project
 
    CodeBuild uses the __codebuild-buildPortfolio-service-role__ role for permissions
    A KMS key is used for encryption __arn:aws:kms:eu-west-2:389685695569:alias/aws/s3__  
 
-7. CodePipeline triggers AWS Lambda to deploy the .zip file
+8. CodePipeline triggers AWS Lambda to deploy the .zip file
 
    The Lambda function is __deployPortfolio__  
    This is a Python 3.6 script that requires the following to be set as
    environment variables:
 
-    bucketName          e.g. portfoliobuild.iantprice.com
-    objectKey           e.g. portfoliobuild.zip
-    portfolio_bucket    e.g. portfolio.iantprice.com
-    sns_arn             e.g. arn:aws:sns:eu-west-2:389685695569:deployPortfolioTopic  
+  * bucketName          e.g. portfoliobuild.iantprice.com
+  * objectKey           e.g. portfoliobuild.zip
+  * portfolio_bucket    e.g. portfolio.iantprice.com
+  * sns_arn             e.g. arn:aws:sns:eu-west-2:389685695569:deployPortfolioTopic  
 
     A success or failure email is sent at the end of the function
 
-8. The result will be found at <http://portfolio.iantprice.com/index.html>
+9. The result will be found at <http://portfolio.iantprice.com/index.html>

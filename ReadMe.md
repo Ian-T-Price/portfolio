@@ -57,12 +57,14 @@ Following ACloudGuru's Serverless Portfolio course
 
 7. Set permissions for the CodeBuild project
 
-   CodeBuild uses the __codebuild-buildPortfolio-service-role__ role for permissions
+   CodeBuild uses the __codebuild-buildPortfolio-service-role__ role for permissions  
    A KMS key is used for encryption __arn:aws:kms:eu-west-2:389685695569:alias/aws/s3__  
 
 8. CodePipeline triggers AWS Lambda to deploy the .zip file
 
-   The Lambda function is __deployPortfolio__  
+   The Lambda function is __deployPortfolio__ which is using the code
+   in __upload-portfolio-lambda.py__
+
    This is a Python 3.6 script that requires the following to be set as
    environment variables:
 

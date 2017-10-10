@@ -11,3 +11,5 @@ pyvenv.cfg
 pip-selfcheck.json
 serverless-portfolio*
 org.kde.konsole.desktop
+dist
+node_modules

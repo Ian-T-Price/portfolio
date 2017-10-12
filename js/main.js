@@ -9,7 +9,7 @@ const myWork = [
       'desc': "Screenshot of a Carlton Carriages Landau and four horses outside Buckingham Palace",
       'src': "images/carlton-carriages_buckingham-palace_640x350.jpg",
       'alt': "Screenshot of a Carlton Carriages Landau and four horses outside Buckingham Palace",
-      'comment': " "
+      'comment': ""
     }
   },
   {

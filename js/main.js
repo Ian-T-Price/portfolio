@@ -5,6 +5,8 @@ import ExampleWork from './example-work';
 const myWork = [
   {
     'title': "Carlton Carriages WordPress Site",
+    'href': "https://example.com",
+    'desc': "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     'image': {
       'desc': "Screenshot of a Carlton Carriages Landau and four horses outside Buckingham Palace",
       'src': "images/carlton-carriages_buckingham-palace_640x350.jpg",
@@ -14,6 +16,8 @@ const myWork = [
   },
   {
     'title': "WordPress, DevOps Styly",
+    'href': "https://example.com",
+    'desc': "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     'image': {
       'desc': "screenshot of a WordPress project using DevOps principles",
       'src': "images/example2.png",
@@ -24,6 +28,8 @@ const myWork = [
   },
   {
     'title': "Serverless: Function As A Service",
+    'href': "https://example.com",
+    'desc': "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     'image': {
       'desc': "screenshot of a project involving Serverless Architecture",
       'src': "images/example3.png",

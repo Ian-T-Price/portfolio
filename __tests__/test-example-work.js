@@ -5,11 +5,6 @@ import ExampleWork, {ExampleWorkBubble} from '../js/example-work';
 
 configure({ adapter: new Adapter() });
 
-// Attempt to fix `npm test` warning about 'React depends on requestAnimationFrame'
-global.requestAnimationFrame = function(callback) {
-  setTimeout(callback,0);
-}
-
 const myWork = [
   {
     'title': "Carlton Carriages WordPress Site",
@@ -33,6 +28,8 @@ const myWork = [
 ];
 
 describe("ExampleWork component", () => {
+  let mockCloseModalFn = jest.fn();
+
   let component = shallow(<ExampleWork work={myWork}/>);
 
   it("Should be a 'section' element", () => {
@@ -49,13 +46,19 @@ describe("ExampleWork component", () => {
     component.instance().closeModal();
     expect(component.instance().state.modalOpen).toBe(false);
   });
+
+//  it("Should call the closeModal handler when clicked", () => {
+//    component.find(".modal__closeButton").simulate('click');
+//    expect(mockCloseModalFn).toHaveBeenCalled();
+//  });
 });
 
 describe("ExampleWorkBubble component", () => {
   let mockOpenModalFn = jest.fn();
 
   let component = shallow(<ExampleWorkBubble example={myWork[0]}
-    openModal={mockOpenModalFn}/>);
+    openModal={mockOpenModalFn} />);
+    //closeModal={mockCloseModalFn}
 
   let images = component.find("img");
 

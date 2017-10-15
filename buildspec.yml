@@ -12,7 +12,6 @@ artifacts:
   files:
     - ./*.html
     - favicon.ico
-    - images/2017-10_Skills_CV-LSA-DO.pdf
     - styles/*.css
     - images/*
     - dist/bundle.js

@@ -54,7 +54,6 @@ describe("ExampleWorkBubble component", () => {
 
   let component = shallow(<ExampleWorkBubble example={myWork[0]}
     openModal={mockOpenModalFn} />);
-    //closeModal={mockCloseModalFn}
 
   let images = component.find("img");
 
@@ -70,8 +69,4 @@ describe("ExampleWorkBubble component", () => {
     component.find(".section__exampleWrapper").simulate('click');
     expect(mockOpenModalFn).toHaveBeenCalled();
   });
-  //  it("Should call the closeModal handler when clicked", () => {
-  //    component.find(".modal__closeButton").simulate('click');
-  //    expect(mockCloseModalFn).toHaveBeenCalled();
-  //  });
 });

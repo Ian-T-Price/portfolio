@@ -35,7 +35,7 @@ class ExampleWork extends React.Component {
           { this.props.work.map( (example, idx) => {
               return(
                 <ExampleWorkBubble example={example} key={idx}
-                  openModal={this.openModal} closeModal={this.closeModal}/>
+                  openModal={this.openModal}/>
               )
             })
           }

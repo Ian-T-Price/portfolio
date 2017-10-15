@@ -7,7 +7,7 @@ configure({ adapter: new Adapter() });
 
 const myExample = {
   'title': "Carlton Carriages WordPress Site",
-  'href': "https://example.com",
+  'href': "https://Carlton-Carriages.co.uk",
   'desc': "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   'image': {
     'desc': "Screenshot of a Carlton Carriages Landau and four horses outside Buckingham Palace",
@@ -18,10 +18,12 @@ const myExample = {
 };
 
 describe("ExampleWorkModal component", () => {
+  let mockCloseModalFn = jest.fn();
+
   let component = shallow(<ExampleWorkModal example={myExample}
     open={false}/>);
   let openComponent = shallow(<ExampleWorkModal example={myExample}
-    open={true}/>);
+    open={true} closeModal={mockCloseModalFn}/>);
 
   let anchors = component.find("a");
 
@@ -36,5 +38,9 @@ describe("ExampleWorkModal component", () => {
   it("Should have the modal class set correctly", () => {
     expect(component.find(".background--skyBlue").hasClass("modal--closed")).toBe(true);
     expect(openComponent.find(".background--skyBlue").hasClass("modal--open")).toBe(true);
+  });
+  it("Should call the closeModal handler when clicked", () => {
+    component.find(".color--cloud").simulate('click');
+    expect(mockCloseModalFn).toHaveBeenCalled();
   });
 });

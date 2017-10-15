@@ -40,7 +40,7 @@ describe("ExampleWorkModal component", () => {
     expect(openComponent.find(".background--skyBlue").hasClass("modal--open")).toBe(true);
   });
   it("Should call the closeModal handler when clicked", () => {
-    component.find(".color--cloud").simulate('click');
+    openComponent.find(".modal__closeButton").simulate('click');
     expect(mockCloseModalFn).toHaveBeenCalled();
   });
 });

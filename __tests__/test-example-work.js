@@ -46,7 +46,6 @@ describe("ExampleWork component", () => {
     component.instance().closeModal();
     expect(component.instance().state.modalOpen).toBe(false);
   });
-
 });
 
 describe("ExampleWorkBubble component", () => {

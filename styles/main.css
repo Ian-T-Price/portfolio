@@ -18,6 +18,12 @@
 
   Cloud
     rgb(236, 240, 241)
+
+  DarkOrange
+    rgb(255, 140, 0)
+
+  Red
+    rgb(255, 0, 0)
 */
 
 .background--skyBlue {
@@ -30,6 +36,18 @@
 
 .color--cloud {
   color: rgb(236, 240, 241);
+}
+
+.color--DarkOrange {
+  color: rgb(255, 140, 0)
+}
+
+.color--Red {
+  color: rgb(255, 0, 0)
+}
+
+.color--Black {
+  color: rgb(0, 0, 0)
 }
 
 .color--grey {

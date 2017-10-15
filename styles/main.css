@@ -82,6 +82,13 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: .1rem;
 }
 
+h1 img {
+  border-radius: 100%;
+  width:150px;
+  height:150px;
+  box-shadow: 3px 6px 20px 0px black;
+}
+
 /*
   Helpers
 */
@@ -162,8 +169,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section__exampleImage {
-  opacity: 0.25;
-  width: 250%;
+  opacity: 0.20;
+  width: 200%;
   margin-left: -50%;
   margin-top: -50%;
 }
@@ -245,5 +252,5 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .modal__image {
-  opacity: 0.2;
+  opacity: 0.1;
 }

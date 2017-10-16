@@ -86,12 +86,11 @@ h1 img {
   border-radius: 100%;
   width:150px;
   height:150px;
-  box-shadow: 3px 6px 20px 0px black;
+  box-shadow: -4px -1px 20px 0px black;
 }
 h1 a {
   text-decoration: none;
 }
-
 /*
   Helpers
 */

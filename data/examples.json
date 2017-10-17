@@ -12,7 +12,7 @@
   },
   {
     "title": "Serverless: Function As A Service",
-    "href": "http://portfolio.IanTPrice.com",
+    "href": "https://IanTPrice.com",
     "desc": "A static AWS S3 website built as a Proof Of Concept (POC) for AWS CodeStar, AWS Pipeline and AWS Lambda using DevOps princples, React and BDD/TDD princples.",
     "image": {
       "desc": "Screenshot of the IanTPrice.com website project involving Serverless Architecture",

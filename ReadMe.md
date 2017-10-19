@@ -12,6 +12,18 @@ Following ACloudGuru's Serverless Portfolio course
   * CSS
   * Fonts Awesome
   * Google Fonts
+  * React
+  * Webpack
+  * Chi & Mocca
+  * Jest
+  * AWS Lambda
+  * AWS IAM
+  * AWS Route53
+  * AWS CloudFront
+  * AWS CodeBuild
+  * AWS CodePipeline
+  * AWS S3
+  * AWS Boto3
 
 ---
 ## Change Log
@@ -75,4 +87,4 @@ Following ACloudGuru's Serverless Portfolio course
 
    A success or failure email is sent at the end of the function
 
-9. The result will be found at <http://portfolio.iantprice.com/index.html>
+9. The result will be found at <https://iantprice.com/index.html>

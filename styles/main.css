@@ -281,35 +281,37 @@ h1 a {
 /* Tooltip text */
 .tooltip .tooltiptext {
     visibility: hidden;
+    position: absolute;
     width: 120px;
     background-color: #555;
     color: #fff;
+    font-size: 1.5rem;
     text-align: center;
     padding: 5px 0;
     border-radius: 6px;
-
-    /* Position the tooltip text */
-    position: absolute;
     z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -60px;
 
     /* Fade in tooltip */
     opacity: 0;
-    transition: opacity 1s;
+    transition: opacity 3s;
+}
+
+.tooltip-right {
+  /* Position the tooltip text */
+    top: 30%;
+    left: 110%;
 }
 
 /* Tooltip arrow */
-.tooltip .tooltiptext::after {
+.tooltip-right::after {
     content: "";
     position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: #555 transparent transparent transparent;
+    border-color: transparent #555 transparent transparent;
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */

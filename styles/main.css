@@ -4,8 +4,7 @@
     to be changed for theme changes
 */
 
-/*
-  COLORS
+/* COLORS
 
   Sky
     rgb(52, 152, 219)
@@ -62,8 +61,7 @@
   background-color: rgb(44, 62, 80);
 }
 
-/*
-  General Styles
+/* General Styles
     These are styles to be inherited
     through parent containers
 */
@@ -91,9 +89,8 @@ h1 img {
 h1 a {
   text-decoration: none;
 }
-/*
-  Helpers
-*/
+
+/* Helpers */
 
 .margin--none {
   margin: 0;
@@ -103,10 +100,7 @@ h1 a {
   overflow: auto;
 }
 
-
-/*
-  Sections
-*/
+/* Sections */
 
 .section {
   font-size: 4.2rem;
@@ -191,9 +185,7 @@ h1 a {
   margin-top: -50%;
 }
 
-/*
-  Header
-*/
+/* Header */
 
 .section__heading--largest {
   float: left;
@@ -221,9 +213,7 @@ h1 a {
 }
 
 
-/*
-  Modal
-*/
+/* Modal */
 
 .modal--closed {
   display: none;
@@ -232,13 +222,15 @@ h1 a {
 .modal--open {
   display: block;
   position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
+  top: 5%;
+  right: auto;
+  left: 10%;
   bottom: 0;
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 85%;
   z-index: 100;
+  overflow: auto;
+  padding: 0!important;
 }
 
 .modal__closeButton {
@@ -319,3 +311,40 @@ h1 a {
     visibility: visible;
     opacity: 1;
 }
+
+.footer {
+   text-align: center;
+   width: 100%;
+}
+
+ .f1 {
+   background: green;
+   padding: 0;
+   margin: 0;
+   text-align: left;
+ }
+
+ .f2 {
+   background: pink;
+   text-align: center;
+ }
+.f2 p {
+  margin: 0;
+}
+
+ .f3 {
+   background: blue;
+   color: white;
+   text-align: right;
+ }
+
+ .f1, .f2, .f3 {
+  -moz-box-sizing: border-box;
+   box-sizing: border-box;
+   display: inline-block;
+   font-size: 14px;
+   padding: 0 4%;
+   min-width: 200px;
+   min-height: 100px;
+   width: 30%;
+ }

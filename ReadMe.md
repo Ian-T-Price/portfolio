@@ -42,9 +42,20 @@ Following ACloudGuru's Serverless Portfolio course
 ## Outline description of the pipeline
 
 1. Code developed locally (or on GitHub...)
+
+   Code is __tested__ locally by running:
+
+   npm run test (or npm run test-watch for continual test runs)
+
+   Code is __compiled__ locally by running:
+
+   npm run __webpack__ (or npm run webpack-watch for continual compilations)
+
+   This re-builds __dist/bundle.js__ each time.
+
 2. Changes committed to VCS
 
-   We are using GitHub for the VCS as AWS CodeBuild has hooks for GitHub  
+   We are using GitHub for the VCS as AWS CodeBuild has hooks for GitHub
    The repo is <https://github.com/Ian-T-Price/portfolio.git>
 
 3. AWS CodePipeline processed triggered
@@ -53,24 +64,24 @@ Following ACloudGuru's Serverless Portfolio course
 
 4. AWS CodeBuild triggered by CodePipeline
 
-   We have set the webhook to rebuild every time a change is made to the repo  
+   We have set the webhook to rebuild every time a change is made to the repo
    **Ensure this is not changed** otherwise the zip file is not always uploded
    The CodeBuild project is __buildPortfolio__
 
 5. CodeBuild the .zip file using the files in buildspec.yml
 
-   The CodeBuild project is using nodejs:7.0.0  
+   The CodeBuild project is using nodejs:7.0.0
    buildspec.yml is the standard file for CodeBuild
 
 6. CodeBuild places the zip file in an S3 bucketName
 
-   The file is named __portfoliobuild.zip__  
-   and the S3 bucket is __portfoliobuild.iantprice.com__  
+   The file is named __portfoliobuild.zip__
+   and the S3 bucket is __portfoliobuild.iantprice.com__
 
 7. Set permissions for the CodeBuild project
 
-   CodeBuild uses the __codebuild-buildPortfolio-service-role__ role for permissions  
-   A KMS key is used for encryption __arn:aws:kms:eu-west-2:389685695569:alias/aws/s3__  
+   CodeBuild uses the __codebuild-buildPortfolio-service-role__ role for permissions
+   A KMS key is used for encryption __arn:aws:kms:eu-west-2:389685695569:alias/aws/s3__
 
 8. CodePipeline triggers AWS Lambda to deploy the .zip file
 
@@ -83,7 +94,7 @@ Following ACloudGuru's Serverless Portfolio course
     * bucketName          e.g. portfoliobuild.iantprice.com
     * objectKey           e.g. portfoliobuild.zip
     * portfolio_bucket    e.g. portfolio.iantprice.com
-    * sns_arn             e.g. arn:aws:sns:eu-west-2:389685695569:deployPortfolioTopic  
+    * sns_arn             e.g. arn:aws:sns:eu-west-2:389685695569:deployPortfolioTopic
 
    A success or failure email is sent at the end of the function
 

@@ -99,3 +99,7 @@ Following ACloudGuru's Serverless Portfolio course
    A success or failure email is sent at the end of the function
 
 9. The result will be found at <https://iantprice.com/index.html>
+
+
+2021-04-26 - Updates process
+============================
